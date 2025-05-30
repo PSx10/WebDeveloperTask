@@ -1,0 +1,65 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin flex-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@mixin container{
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+  max-width: 1260px;
+}
+
+@mixin primary-button {
+      background-color: $primary;
+      color: $white;
+
+    a{
+      color: $primary;
+    }
+
+    svg {
+      color: $white;
+    }
+}
+
+@mixin primary-reversed-button {
+      background-color: $quatenary;
+      color: $primary;
+
+    a{
+      color: $primary;
+    }
+      
+    svg {
+      color: $primary;
+    }
+}
+
+
+@mixin secondary-button {
+      background-color: $secondary;
+      color: $white;
+
+      svg {
+      color: $white;
+    }
+}
+
+@mixin secondary-reversed-button {
+      background-color: $quatenary;
+      color: $secondary;
+
+      svg {
+      color: $secondary;
+    }
+}
+

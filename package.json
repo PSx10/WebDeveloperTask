@@ -1,0 +1,16 @@
+{
+  "name": "Smart-recruiters-task",
+  "version": "1.0.0",
+  "scripts": {
+    "PSx10": "concurrently \"npm run watch:scss\" \"npm run watch:ts\"",
+    "build:scss": "sass src/scss/style.scss dist/css/style.css",
+    "watch:scss": "sass --watch src/scss:dist/css",
+    "build:ts": "tsc",
+    "watch:ts": "tsc --watch"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "sass": "^1.75.0",
+    "typescript": "^5.8.3"
+  }
+}

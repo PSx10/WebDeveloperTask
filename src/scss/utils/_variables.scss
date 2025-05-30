@@ -1,0 +1,33 @@
+/*colors*/
+
+$primary: #13304A;
+$secondary: #076D59;
+$tertiary: #37B971;
+$quatenary: #E9ECE7;
+$black: #000000;
+$white: #FFFFFF;
+$content: #222222;
+$danger: #9F0000;
+
+$color-bg-start: #FFFFFF;
+$color-bg-end: #E9ECE7;
+
+$bg-color: linear-gradient(to bottom, $color-bg-start 0%, $color-bg-end 100%);
+
+/*typoghraphy*/
+
+$font-family-base: 'Inter', sans-serif;
+$font-size-h1: 3rem;
+$font-size-h2: 2.375rem;
+$font-size-h3: 2rem;
+$font-size-h4: 1.75rem;
+$font-size-h5: 1.5rem;
+$font-size-h6: 1.125rem;
+
+$font-size-p: 1rem;
+$font-size-small: 0.833rem;
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
