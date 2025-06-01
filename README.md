@@ -4,7 +4,7 @@ Clone the repo or do it by .zip file
     - git clone https://github.com/PSx10/WebDeveloperTask.git
 
 
-DO NOT just open it by index.html - modal will not work.
+DO NOT just open it by simply clicking index.html - modal will not work.
 
 SETUP
 
