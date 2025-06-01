@@ -34,6 +34,7 @@ p {
   padding: 0 30px;
   max-width: 1260px;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
@@ -61,18 +62,18 @@ p {
   flex-wrap: wrap;
   gap: 0.938rem;
 }
-.header__actions a {
-  text-decoration: none;
-}
-.header__button--secondary {
+.header__button {
   display: flex;
   align-items: center;
   padding: 0.5rem 1.5rem;
   border-radius: 0.5rem;
+  transition: ease-out 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.header__button--secondary {
   background-color: #076D59;
   color: #FFFFFF;
-  cursor: pointer;
-  transition: ease-out 0.3s;
 }
 .header__button--secondary svg {
   color: #FFFFFF;
@@ -85,14 +86,9 @@ p {
   color: #076D59;
 }
 .header__button--primary {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1.5rem;
-  border-radius: 0.5rem;
   background-color: #13304A;
   color: #FFFFFF;
-  transition: ease-out 0.3s;
+  gap: 0.5rem;
 }
 .header__button--primary a {
   color: #13304A;
@@ -132,6 +128,7 @@ p {
 }
 .gallery__media-grid {
   display: grid;
+  place-items: center;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
   grid-template-columns: 1fr;
@@ -149,11 +146,15 @@ p {
 .gallery__video {
   position: relative;
   cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
+  padding: 0;
 }
 .gallery__video:hover .play-button {
   opacity: 0.6;
 }
-.gallery__video img:nth-child(2) {
+.gallery__video img {
   height: 100%;
   border-radius: 0.813rem;
   object-fit: cover;
@@ -163,6 +164,7 @@ p {
   .gallery__media-grid {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr auto auto;
+    place-items: stretch;
     gap: 15px;
     grid-template-areas: "box-1 box-2 box-4" "box-1 box-2 box-5" "box-3 box-3 box-5";
   }
@@ -181,7 +183,7 @@ p {
     height: auto;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 768px) {
   .gallery__media-grid {
     gap: 30px;
   }
@@ -194,7 +196,7 @@ p {
   transform: translate(-50%, -50%);
   z-index: 1;
   width: clamp(48px, 6vw, 48px);
-  height: clamp(48px, 6vw, 48px);
+  aspect-ratio: 1;
   background-color: #13304A;
   color: #FFFFFF;
   border-radius: 50%;
@@ -237,7 +239,7 @@ p {
   border-radius: 20px;
   height: 100%;
   width: 100%;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
   position: relative;
   padding: 30px;
   overflow: auto;
@@ -292,7 +294,7 @@ p {
   border-radius: 20px;
   border: none;
 }
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .modal {
     align-items: center;
     padding: 30px;

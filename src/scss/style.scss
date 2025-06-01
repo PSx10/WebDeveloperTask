@@ -3,7 +3,7 @@
 @import 'base/boilerplate';
 @import 'base/typography';
 
-.header {
+.header{
   @include container;
   @include flex-left;
   gap: 20px;
@@ -33,19 +33,20 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.938rem;
-
-    a {
-      text-decoration: none;
-    }
   }
-    &__button--secondary {
+
+  &__button{
       display: flex;
       align-items: center;
       padding: 0.5rem 1.5rem;
       border-radius: 0.5rem;
-      @include secondary-button;
-      cursor: pointer;
       transition: ease-out 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+  }
+
+    &__button--secondary {
+      @include secondary-button;
 
       &:hover {
         @include secondary-reversed-button; // @include primary-button
@@ -53,20 +54,15 @@
     }
 
     &__button--primary {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1.5rem;
-      border-radius: 0.5rem;
       @include primary-button;
-      transition: ease-out 0.3s;
+      gap: 0.5rem;
 
       &:hover {
         @include primary-reversed-button; // @include primary--button
       }
     }
 
-  @media (min-width: 481px) {
+  @include media-sm {
     @include flex-center;
   }
 }
@@ -81,6 +77,7 @@
 
   &__media-grid {
     display: grid;
+    place-items: center;
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
     grid-template-columns: 1fr;
@@ -106,6 +103,10 @@
     &__video {
       position: relative;
       cursor: pointer;
+      outline: none;
+      border: none;
+      background: none;
+      padding: 0;
 
       &:hover {
         .play-button {
@@ -113,9 +114,7 @@
         }
       }
 
-    
-
-    img:nth-child(2) {
+      img {
         height: 100%;
         border-radius: 0.813rem;
         object-fit: cover;
@@ -124,10 +123,11 @@
 
   }
 
-  @media (min-width: 481px) {
+  @include media-sm {
     &__media-grid {
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: 1fr auto auto;
+      place-items: stretch;
       gap: 15px;
       grid-template-areas:
         "box-1 box-2 box-4"
@@ -153,7 +153,7 @@
     }
   }
 
-  @media (min-width: 800px) {
+  @include media-md {
     &__media-grid {
       gap: 30px;
     }
@@ -167,7 +167,7 @@
   transform: translate(-50%, -50%);
   z-index: 1;
   width: clamp(48px, 6vw, 48px);
-  height: clamp(48px, 6vw, 48px);
+  aspect-ratio: 1;
   @include primary-button; // @include primary-reversed-button
   border-radius: 50%;
   transition: ease-out 0.3s;
@@ -205,7 +205,7 @@
     border-radius: 20px;
     height: 100%;
     width: 100%;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+    box-shadow: $default-box-shadow;
     position: relative;
     padding: 30px;
     overflow: auto;
@@ -267,13 +267,13 @@
     }
   }
 
-  @media (min-width: 600px) {
+  @include media-md {
     align-items: center;
     padding: 30px;
 
     &__content {
       background: $bg-color;
-      box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
+      box-shadow: $default-box-shadow;
       overflow-y: auto;
       height: 100%;
       max-height: 890px;
